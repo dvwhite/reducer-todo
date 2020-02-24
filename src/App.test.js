@@ -8,7 +8,9 @@ import App from './App';
 Enzyme.configure({ adapter: new Adapter() });
 
 // Tests
-test('renders the App component without crashing', () => {
-  const enzymeWrapper = shallow(<App />);
-  expect(enzymeWrapper.find('App')).not.toBeNull();
-});
+describe('The App component', () => {
+  test('renders the App component without crashing', () => {
+    const enzymeWrapper = shallow(<App />);
+    expect(enzymeWrapper.find('App')).not.toBeNull();
+  });
+})
