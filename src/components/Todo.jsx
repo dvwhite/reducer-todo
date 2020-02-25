@@ -13,7 +13,6 @@ const Card = styled.div`
               0 0 2px rgba(0, 0, 0, 0.12), 
               0 2px 4px rgba(0, 0, 0, 0.24);
   width: 18rem;
-  height: 12rem;
   overflow: hidden;
   word-wrap: break-word;
 `
@@ -28,11 +27,9 @@ const Card = styled.div`
 // A component rendering a todo list item in a styled Card div
 const Todo = ({ data }) => {
   return (
-    <div>
-      <Card>
-        <h2>{data?.item}</h2>
-      </Card>
-    </div>
+    <Card>
+      <h2>{data?.item}</h2>
+    </Card>
   );
 }
 
