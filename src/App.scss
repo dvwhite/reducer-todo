@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+}
+
+.completed {
+  opacity: 0.9;
+  background-color: rgb(197, 241, 197);
+  font-style: italic;
+  border: 2px solid $completed-green;
+}
+
+.checkmark-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 1%;
+}
+
+.checkmark {
+  z-index: 10;
+  font-size: 3rem;
+  font-weight: bold;
+  color: $completed-green;
+  margin-right: 1rem;
+}

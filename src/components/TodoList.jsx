@@ -4,8 +4,10 @@ import Todo from './Todo';
 import styled from 'styled-components';
 
 const Todos = styled.div`
-  display: flex;
-  flex-direction: column;
+  background: white;
+  border: 1px solid gray;
+  width: 99.5%;
+  margin: 0 auto;
 `
 
 /* 
@@ -19,7 +21,7 @@ const TodoList = () => {
     <Todos>
       {
         state.map(todo => (
-          <Todo data={todo} />
+          <Todo data={todo} key={todo.id}/>
         ))
       }
     </Todos>

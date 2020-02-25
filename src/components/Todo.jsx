@@ -1,21 +1,37 @@
-import React from 'react';
+import React from "react";
 
 // Styled components imports
-import styled from 'styled-components';
+import styled from "styled-components";
 
 // Styled components
-const Card = styled.div`
+const Item = styled.p`
+  background: white;
+  border-color: rgb(102, 102, 102);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px, rgba(0, 0, 0, 0.12) 0px 2px 2px,
+    rgba(0, 0, 0, 0.12) 0px 4px 4px, rgba(0, 0, 0, 0.12) 0px 8px 8px,
+    rgba(0, 0, 0, 0.12) 0px 16px 16px;
+  width: 98%;
   margin: 1%;
-  opacity: 0.95;
-  border: 0;
-  border-radius: 10px;
-  box-shadow: 0 -1px 0 #e0e0e0, 
-              0 0 2px rgba(0, 0, 0, 0.12), 
-              0 2px 4px rgba(0, 0, 0, 0.24);
-  width: 18rem;
-  overflow: hidden;
-  word-wrap: break-word;
-`
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.4 ease;
+
+  p {
+    padding: 2%;
+    word-wrap: nowrap;
+    overflow: hidden;
+  }
+
+  &:hover {
+    transition: all 0.4 ease;
+    background: rgb(192, 233, 247);
+
+    p {
+      font-weight: bold;
+    }
+  }
+`;
 
 /* THe expected shape of a todo:
   {
@@ -27,10 +43,15 @@ const Card = styled.div`
 // A component rendering a todo list item in a styled Card div
 const Todo = ({ data }) => {
   return (
-    <Card>
+    <Item>
       <h2>{data?.item}</h2>
-    </Card>
+      {data.completed ? (
+        <div className="checkmark-wrapper">
+          <div className="checkmark">&#10003;</div>
+        </div>
+      ) : null}
+    </Item>
   );
-}
+};
 
 export default Todo;
