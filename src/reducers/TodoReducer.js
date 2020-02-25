@@ -6,7 +6,7 @@ export const initialState = {
   id: 3892987589
 };
 
-export const MasterReducer = (state, action) => {
+export const TodoReducer = (state, action) => {
   switch(action.type) {
     
 
