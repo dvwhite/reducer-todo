@@ -33,14 +33,14 @@ const Footer = styled.div`
 `
 
 const Form = (props) => {
-  const [input, setInput] = useState('');
+  const [inputText, setInputText] = useState('');
 
-  const onSubmit = event => {
+  const handleSubmit = event => {
     event.preventDefault();
     props.dispatch()
   }
 
-  const onChange = event => {
+  const handleChange = event => {
     event.preventDefault();
     setInput(event.target.value)
   }
@@ -49,7 +49,7 @@ const Form = (props) => {
     <FormWrapper onSubmit={handleSubmit}>
       <Input 
         type="text"
-        name="text"
+        name="inputText"
         data-testid="form-component-input"
         onChange={handleChange}
         placeholder='Enter a todo...'
