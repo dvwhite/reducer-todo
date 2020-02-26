@@ -25,12 +25,6 @@ const Input = styled.div`
   border: 0.75 px solid #A9A9A9;
 `
 
-const Footer = styled.div`
-  height: 2rem;
-  width: 100%;
-  border-radius: 5px;
-  background: whitesmoke;
-`
 
 const Form = (props) => {
   const [inputText, setInputText] = useState('');
