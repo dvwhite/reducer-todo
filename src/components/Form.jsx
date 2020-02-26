@@ -1,7 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useReducer } from 'react';
+
+// Reducer imports
+import { initialState, TodoReducer } from './../reducers/TodoReducer.js';
+import { ADD_TODO } from './../constants/ActionTypes';
+
+// Styled component imports
 import styled from 'styled-components';
 
-const FormWrapper = styled.div`
+// Styled components
+const FormWrapper = styled.form`
   display: flex;
   flex-direction: row;
   margin: 1%;
@@ -16,7 +23,7 @@ const FormWrapper = styled.div`
   }
 `
 
-const Input = styled.div`
+const Input = styled.input`
   padding: 1%;
   width: 100%;
   font-size: 1rem;
@@ -25,18 +32,24 @@ const Input = styled.div`
   border: 0.75 px solid #A9A9A9;
 `
 
-
-const Form = (props) => {
+// The form component to add a todo to the todo list
+const Form = ({dispatch}) => {
   const [inputText, setInputText] = useState('');
 
+  // Submit dispatches an action to the reducer
   const handleSubmit = event => {
     event.preventDefault();
-    props.dispatch()
+    if (inputText) {
+      dispatch( { type: ADD_TODO, payload: inputText });
+      setInputText('');
+      event.target.reset(); // Clear form on submit
+    }
   }
 
+  // Change updates the state as the input changes
   const handleChange = event => {
     event.preventDefault();
-    setInput(event.target.value)
+    setInputText(event.target.value);
   }
 
   return (
@@ -47,7 +60,8 @@ const Form = (props) => {
         data-testid="form-component-input"
         onChange={handleChange}
         placeholder='Enter a todo...'
-      />
+      ></Input>
+      <button>Add Todo</button>
     </FormWrapper>
   );
 }
