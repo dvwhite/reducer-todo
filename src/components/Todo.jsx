@@ -2,6 +2,7 @@ import React from "react";
 
 // Styled components imports
 import styled from "styled-components";
+import { COMPLETE_TODO } from "../constants/ActionTypes";
 
 // Styled components
 const Item = styled.p`
@@ -41,9 +42,18 @@ const Item = styled.p`
   }
 */
 // A component rendering a todo list item in a styled Card div
-const Todo = ({ data }) => {
+const Todo = ({ data, key, dispatch }) => {
+  const completeTodo = () => {
+    dispatch({
+      type: COMPLETE_TODO,
+      payload: { ...data }
+    });
+  };
   return (
-    <Item>
+    <Item
+      onClick={completeTodo}
+      className={`todo${data.completed ? " completed" : ""}`}
+    >
       <h2>{data?.item}</h2>
       {data.completed ? (
         <div className="checkmark-wrapper">
