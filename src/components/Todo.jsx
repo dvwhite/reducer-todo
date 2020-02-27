@@ -59,7 +59,7 @@ const Todo = ({ data, dispatch }) => {
       className={`${data?.completed ? " completed" : ""}`}
     >
       <h2>{data?.item}</h2>
-      {data.completed ? (
+      {data?.completed ? (
         <div className="checkmark-wrapper">
           <div className="checkmark">&#10003;</div>
         </div>
