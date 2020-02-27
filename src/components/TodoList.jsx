@@ -11,7 +11,7 @@ import Form from './Form';
 import styled from 'styled-components';
 
 // Styled components
-const Todos = styled.div`
+export const Todos = styled.div`
   background: white;
   width: 99.5%;
   margin: 0 auto;
