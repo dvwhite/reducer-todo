@@ -1,4 +1,5 @@
 import React from "react";
+import "./../App.scss";
 
 // Styled components imports
 import styled from "styled-components";
@@ -7,18 +8,21 @@ import { COMPLETE_TODO } from "../constants/ActionTypes";
 // Styled components
 const Item = styled.p`
   background: white;
-  border-color: rgb(102, 102, 102);
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px, rgba(0, 0, 0, 0.12) 0px 2px 2px,
-    rgba(0, 0, 0, 0.12) 0px 4px 4px, rgba(0, 0, 0, 0.12) 0px 8px 8px,
-    rgba(0, 0, 0, 0.12) 0px 16px 16px;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 
+    rgba(0, 0, 0, 0.13) 0px 1px 1px, 
+    rgba(0, 0, 0, 0.13) 0px 2px 2px,
+    rgba(0, 0, 0, 0.13) 0px 4px 4px, 
+    rgba(0, 0, 0, 0.13) 0px 8px 8px,
+    rgba(0, 0, 0, 0.13) 0px 16px 16px;
   width: 98%;
   margin: 1%;
   display: flex;
   justify-content: space-between;
   transition: all 0.4 ease;
 
-  p {
+  h2 {
     padding: 2%;
     word-wrap: nowrap;
     overflow: hidden;
@@ -42,17 +46,17 @@ const Item = styled.p`
   }
 */
 // A component rendering a todo list item in a styled Card div
-const Todo = ({ data, key, dispatch }) => {
+const Todo = ({ data, dispatch }) => {
   const completeTodo = () => {
     dispatch({
       type: COMPLETE_TODO,
-      payload: { ...data }
+      payload: data
     });
   };
   return (
     <Item
       onClick={completeTodo}
-      className={`todo${data.completed ? " completed" : ""}`}
+      className={`${data?.completed ? " completed" : ""}`}
     >
       <h2>{data?.item}</h2>
       {data.completed ? (
