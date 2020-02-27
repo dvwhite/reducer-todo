@@ -13,7 +13,6 @@ import styled from 'styled-components';
 // Styled components
 const Todos = styled.div`
   background: white;
-  border: 1px solid gray;
   width: 99.5%;
   margin: 0 auto;
 `
@@ -28,9 +27,11 @@ const TodoList = () => {
     <Todos>
       <Form dispatch={dispatch} />
       {
-        state.map(todo => (
+        state.todos
+        .sort((a, b) => a.id < b.id ? -1 : 1)
+        .map(todo => (
           <Todo data={todo} key={todo.id} dispatch={dispatch} />
-        ))
+          ))
       }
     </Todos>
   );
