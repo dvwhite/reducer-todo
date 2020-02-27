@@ -13,4 +13,6 @@ describe('The App component', () => {
     const reducerMock = jest.mock(TodoReducer);
     console.log(reducerMock.mock)
   }); 
+
+  
 })
