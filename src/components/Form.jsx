@@ -2,7 +2,7 @@ import React, { useState, useReducer } from 'react';
 
 // Reducer imports
 import { initialState, TodoReducer } from './../reducers/TodoReducer.js';
-import { ADD_TODO } from './../constants/ActionTypes';
+import { ADD_TODO, CLEAR_COMPLETED_TODOS } from './../constants/ActionTypes';
 
 // Styled component imports
 import styled from 'styled-components';
@@ -12,7 +12,7 @@ const FormWrapper = styled.form`
   display: flex;
   flex-direction: row;
   margin: 1%;
-  width: 60%;
+  width: 99%;
 
   @media (max-width: 800px) {
     width: 80%;
@@ -52,6 +52,14 @@ const Form = ({dispatch}) => {
     setInputText(event.target.value);
   }
 
+  // Clear the complete todos
+  const clearCompleted = (event) => {
+    event.preventDefault();
+    dispatch({
+      type: CLEAR_COMPLETED_TODOS
+    });
+  };
+
   return (
     <FormWrapper onSubmit={handleSubmit}>
       <Input 
@@ -62,6 +70,9 @@ const Form = ({dispatch}) => {
         placeholder='Enter a todo...'
       ></Input>
       <button>Add Todo</button>
+      <button className='btn-clear' onClick={clearCompleted}>
+        Clear Completed
+      </button>
     </FormWrapper>
   );
 }
