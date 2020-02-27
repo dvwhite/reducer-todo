@@ -26,3 +26,20 @@ $completed-green: #32BEA6;
   color: $completed-green;
   margin-right: 1rem;
 }
+
+button {
+  background-color: rgb(231, 229, 229);
+  border: 0;
+  box-shadow: 2px 4px 6px #444;
+  margin: 1%;
+  padding: 1%;
+  font-size: 1rem;
+  border-radius: 5px;
+  outline: 0;
+  width: 10rem;
+
+  &:active {
+    box-shadow: 0 2px #333;
+    transform: translateY(3px);
+  }
+}
