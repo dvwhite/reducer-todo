@@ -20,7 +20,6 @@ describe("The TodoList component", () => {
   });
 
   test("sort correctly sorts the todos in increasing order of id", () => {
-    const enzymeWrapper = shallow(<TodoList />);
     const mockState = {
       todoList: [{ id: 1 }, { id: 0 }, { id: 3 }, { id: -1 }]
     };

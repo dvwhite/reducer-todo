@@ -31,7 +31,7 @@ const TodoList = () => {
         .sort((a, b) => a.id < b.id ? -1 : 1)
         .map(todo => (
           <Todo data={todo} key={todo.id} dispatch={dispatch} />
-          ))
+        ))
       }
     </Todos>
   );
