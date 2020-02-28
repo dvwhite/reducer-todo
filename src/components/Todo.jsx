@@ -9,7 +9,7 @@ import { COMPLETE_TODO } from "../constants/ActionTypes";
 const Item = styled.p`
   background: white;
   border-radius: 5px;
-  border-top: 0.5px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 
     rgba(0, 0, 0, 0.13) 0px 1px 1px, 
     rgba(0, 0, 0, 0.13) 0px 2px 2px,
@@ -38,10 +38,17 @@ const Item = styled.p`
 
   &:hover {
     transition: all 0.4 ease;
-    background: rgb(192, 233, 247);
+    border: 1px solid #32BEA6;
+    background-color: lightgreen;
   }
 `
 
+const Row = styled.div`
+  display: flex;
+  width: 40%;
+  justify-content: flex-end;
+  align-items: center;
+`
 
 
 /* THe expected shape of a todo:
@@ -64,12 +71,14 @@ const Todo = ({ data, dispatch }) => {
       onClick={completeTodo}
       className={`${data?.completed ? " completed" : ""}`}
       >
-        <h2>{data?.item}</h2>
-        {data?.completed ? <p>Done: {data.completedOn}</p> : null}
-      {data?.completed ? (
-        <div className="checkmark-wrapper">
-          <div className="checkmark">&#10003;</div>
-        </div>
+        <h3>{data?.item}</h3>
+        {data?.completed ? ( 
+        <Row>
+          <p>Done: {data?.completedOn}</p>
+          <div className="checkmark-wrapper">
+            <div className="checkmark">&#10003;</div>
+          </div>
+        </Row>
       ) : null}
     </Item>
   );

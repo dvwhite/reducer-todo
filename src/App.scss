@@ -1,11 +1,19 @@
 // Variables
 $completed-green: #32BEA6;
 
+// Styles
+body {
+  background: linear-gradient(to right, skyblue,rgb(79, 122, 139)) no-repeat no-repeat;
+  background-color: white;
+  height: 99vh;
+}
+
 .completed {
   opacity: 0.9;
   background-color: rgb(197, 241, 197);
   font-style: italic;
-  border: 2px solid $completed-green !important;
+  border: 1px solid $completed-green !important;
+  color: rgb(15, 59, 52);
 }
 
 .checkmark-wrapper {

@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   align-items: center;
   width: 55%;
   border: 1px solid darkgray;
-  margin: auto;
+  margin: 1% auto;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px,
               rgba(0, 0, 0, 0.12) 0px 2px 2px, 
               rgba(0, 0, 0, 0.12) 0px 4px 4px, 
