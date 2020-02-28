@@ -1,15 +1,11 @@
 // Variables
 $completed-green: #32BEA6;
 
-.App {
-  text-align: center;
-}
-
 .completed {
   opacity: 0.9;
   background-color: rgb(197, 241, 197);
   font-style: italic;
-  border: 2px solid $completed-green;
+  border: 2px solid $completed-green !important;
 }
 
 .checkmark-wrapper {

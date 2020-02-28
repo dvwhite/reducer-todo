@@ -16,27 +16,33 @@ const Item = styled.p`
     rgba(0, 0, 0, 0.13) 0px 4px 4px, 
     rgba(0, 0, 0, 0.13) 0px 8px 8px,
     rgba(0, 0, 0, 0.13) 0px 16px 16px;
-  width: 98%;
+  width: 96%;
   margin: 1%;
+  padding: 1%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   transition: all 0.4 ease;
 
-  h2 {
-    padding: 2%;
-    word-wrap: nowrap;
+  p {
+    margin: 0.5%;
     overflow: hidden;
+    word-wrap: break-word;
+    justify-self: flex-end;
+  }
+
+  h2 {
+    overflow: hidden;
+    width: 70%;
   }
 
   &:hover {
     transition: all 0.4 ease;
     background: rgb(192, 233, 247);
-
-    p {
-      font-weight: bold;
-    }
   }
-`;
+`
+
+
 
 /* THe expected shape of a todo:
   {
@@ -57,8 +63,9 @@ const Todo = ({ data, dispatch }) => {
     <Item
       onClick={completeTodo}
       className={`${data?.completed ? " completed" : ""}`}
-    >
-      <h2>{data?.item}</h2>
+      >
+        <h2>{data?.item}</h2>
+        {data?.completed ? <p>Done: {data.completedOn}</p> : null}
       {data?.completed ? (
         <div className="checkmark-wrapper">
           <div className="checkmark">&#10003;</div>
