@@ -8,17 +8,11 @@ import { COMPLETE_TODO } from "../constants/ActionTypes";
 // Styled components
 const Item = styled.p`
   background: white;
-  border-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  box-shadow: 
-    rgba(0, 0, 0, 0.13) 0px 1px 1px, 
-    rgba(0, 0, 0, 0.13) 0px 2px 2px,
-    rgba(0, 0, 0, 0.13) 0px 4px 4px, 
-    rgba(0, 0, 0, 0.13) 0px 8px 8px,
-    rgba(0, 0, 0, 0.13) 0px 16px 16px;
+  border: 1px solid #A9A9A9;
+  border-bottom: 0;
   width: 96%;
-  margin: 1%;
-  padding: 1%;
+  margin: 0% 1%;
+  padding-left: 1%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,17 +22,15 @@ const Item = styled.p`
     margin: 0.5%;
     overflow: hidden;
     word-wrap: break-word;
-    justify-self: flex-end;
   }
 
-  h2 {
+  h4 {
     overflow: hidden;
     width: 70%;
   }
 
   &:hover {
     transition: all 0.4 ease;
-    border: 1px solid #32BEA6;
     background-color: lightgreen;
   }
 `
@@ -49,7 +41,6 @@ const Row = styled.div`
   justify-content: flex-end;
   align-items: center;
 `
-
 
 /* THe expected shape of a todo:
   {
@@ -69,9 +60,9 @@ const Todo = ({ data, dispatch }) => {
   return (
     <Item
       onClick={completeTodo}
-      className={`${data?.completed ? " completed" : ""}`}
+      className={`todo${data?.completed ? " completed" : ""}`}
       >
-        <h3>{data?.item}</h3>
+        <h4>{data?.item}</h4>
         {data?.completed ? ( 
         <Row>
           <p>Done: {data?.completedOn}</p>

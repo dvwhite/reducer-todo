@@ -24,10 +24,9 @@ const FormWrapper = styled.form`
 `
 
 const Input = styled.input`
-  padding: 1%;
+  padding-left: 1%;
   width: 100%;
   font-size: 1rem;
-  border-radius: 5px;
   outline: 0;
   border: 0.75 px solid #A9A9A9;
 `
@@ -67,7 +66,7 @@ const Form = ({dispatch}) => {
         name="inputText"
         data-testid="form-component-input"
         onChange={handleChange}
-        placeholder='Enter a todo...'
+        placeholder='Enter a new todo...'
       ></Input>
       <button>Add Todo</button>
       <button className='btn-clear' onClick={clearCompleted}>

@@ -1,18 +1,21 @@
 // Variables
 $completed-green: #32BEA6;
+$deep-blue: #0078FF;
+$med-blue: #3A9DF6;
+$dark-red: #DD3546;
 
 // Styles
-body {
-  background: linear-gradient(to right, skyblue,rgb(79, 122, 139)) no-repeat no-repeat;
+html, body {
+  margin: 0;
+  padding: 0;
   background-color: white;
-  height: 99vh;
+  height: 100vh;
 }
 
 .completed {
   opacity: 0.9;
-  background-color: rgb(197, 241, 197);
+  background-color: rgb(197, 241, 197) !important;
   font-style: italic;
-  border: 1px solid $completed-green !important;
   color: rgb(15, 59, 52);
 }
 
@@ -32,9 +35,10 @@ body {
 }
 
 button {
-  background-color: rgb(231, 229, 229);
-  border: 0;
-  box-shadow: 2px 4px 6px #444;
+  background-color: $med-blue;
+  color: white;
+  border: 1px solid white;
+  box-shadow: 2px 4px 6px #76BFFF;
   margin: 1%;
   padding: 1%;
   font-size: 1rem;
@@ -43,7 +47,20 @@ button {
   width: 10rem;
 
   &:active {
-    box-shadow: 0 2px #333;
+    box-shadow: 0 2px #76BFFF;
     transform: translateY(3px);
+  }
+}
+
+.todo {  
+  &:first-of-type {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  &:last-of-type {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom: 1px solid #A9A9A9;
   }
 }

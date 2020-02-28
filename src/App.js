@@ -4,18 +4,11 @@ import TodoList from './components/TodoList';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  background: whitesmoke;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 55%;
-  border: 1px solid darkgray;
-  margin: 1% auto;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px,
-              rgba(0, 0, 0, 0.12) 0px 2px 2px, 
-              rgba(0, 0, 0, 0.12) 0px 4px 4px, 
-              rgba(0, 0, 0, 0.12) 0px 8px 8px, 
-              rgba(0, 0, 0, 0.12) 0px 16px 16px;
+  margin: 0 auto;
 
   @media (max-width: 800px) {
     width: 80%;
@@ -26,9 +19,15 @@ const Wrapper = styled.div`
   }
 `
 
+const Title = styled.h2`
+  margin-bottom: 0;
+  padding-bottom: 0;
+`
+
 function App() {
   return (
     <Wrapper className="App">
+      <Title>Todo List</Title>
       <TodoList />
     </Wrapper>
   );
