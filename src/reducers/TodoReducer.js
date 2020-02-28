@@ -1,5 +1,12 @@
 import React from "react";
-import { ADD_TODO, COMPLETE_TODO, CLEAR_COMPLETED_TODOS } from "./../constants/ActionTypes";
+import moment from "moment";
+
+// Action type imports
+import {
+  ADD_TODO,
+  COMPLETE_TODO,
+  CLEAR_COMPLETED_TODOS
+} from "./../constants/ActionTypes";
 
 // The initial reducer state
 export const initialState = {
@@ -34,16 +41,18 @@ export const TodoReducer = (state, action) => {
         ...state,
         todos: [
           ...state.todos.filter(item => item.id !== action.payload.id),
-          { ...action.payload, completed: !action.payload.completed }
+          {
+            ...action.payload,
+            completed: !action.payload.completed,
+            completedOn: moment().format("MM/DD/YYYY")
+          }
         ]
       };
     case CLEAR_COMPLETED_TODOS:
       return {
         ...state,
-        todos: [
-          ...state.todos.filter(item => !item.completed)
-        ]
-      }
+        todos: [...state.todos.filter(item => !item.completed)]
+      };
     default:
       return state;
   }
