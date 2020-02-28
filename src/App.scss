@@ -34,7 +34,7 @@ html, body {
   margin-right: 1rem;
 }
 
-button {
+.btn-add {
   background-color: $med-blue;
   color: white;
   border: 1px solid white;
@@ -48,6 +48,24 @@ button {
 
   &:active {
     box-shadow: 0 2px #76BFFF;
+    transform: translateY(3px);
+  }
+}
+
+.btn-clear {
+  background-color: $dark-red;
+  color: white;
+  border: 1px solid white;
+  box-shadow: 2px 4px 6px rgb(228, 105, 117);
+  margin: 1%;
+  padding: 1%;
+  font-size: 1rem;
+  border-radius: 5px;
+  outline: 0;
+  width: 10rem;
+
+  &:active {
+    box-shadow: 0 2px rgb(228, 105, 117);
     transform: translateY(3px);
   }
 }

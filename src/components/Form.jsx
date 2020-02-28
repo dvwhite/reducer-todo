@@ -68,7 +68,7 @@ const Form = ({dispatch}) => {
         onChange={handleChange}
         placeholder='Enter a new todo...'
       ></Input>
-      <button>Add Todo</button>
+      <button className='btn-add'>Add Todo</button>
       <button className='btn-clear' onClick={clearCompleted}>
         Clear Completed
       </button>
