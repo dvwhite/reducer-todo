@@ -1,0 +1,84 @@
+// Variables
+$completed-green: #32BEA6;
+$deep-blue: #0078FF;
+$med-blue: #3A9DF6;
+$dark-red: #DD3546;
+
+// Styles
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  height: 100vh;
+}
+
+.completed {
+  opacity: 0.9;
+  background-color: rgb(197, 241, 197) !important;
+  font-style: italic;
+  color: rgb(15, 59, 52);
+}
+
+.checkmark-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 1%;
+}
+
+.checkmark {
+  z-index: 10;
+  font-size: 3rem;
+  font-weight: bold;
+  color: $completed-green;
+  margin-right: 1rem;
+}
+
+.btn-add {
+  background-color: $med-blue;
+  color: white;
+  border: 1px solid white;
+  box-shadow: 2px 4px 6px #76BFFF;
+  margin: 1%;
+  padding: 1%;
+  font-size: 1rem;
+  border-radius: 5px;
+  outline: 0;
+  width: 10rem;
+
+  &:active {
+    box-shadow: 0 2px #76BFFF;
+    transform: translateY(3px);
+  }
+}
+
+.btn-clear {
+  background-color: $dark-red;
+  color: white;
+  border: 1px solid white;
+  box-shadow: 2px 4px 6px rgb(228, 105, 117);
+  margin: 1%;
+  padding: 1%;
+  font-size: 1rem;
+  border-radius: 5px;
+  outline: 0;
+  width: 10rem;
+
+  &:active {
+    box-shadow: 0 2px rgb(228, 105, 117);
+    transform: translateY(3px);
+  }
+}
+
+.todo {  
+  &:first-of-type {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  &:last-of-type {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom: 1px solid #A9A9A9;
+  }
+}
